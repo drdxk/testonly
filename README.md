@@ -7,6 +7,12 @@ package. Import should be done as a side effect import.
 
 Recommendation: make it the first import in your files.
 
+## Installation
+
+```shell
+npm install mark-testonly --save
+```
+
 ## Usage
 
 ```typescript
