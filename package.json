@@ -1,5 +1,5 @@
 {
-  "name": "testonly",
+  "name": "@drdxk/testonly",
   "version": "0.1.0",
   "description": "mark .js/.ts files as testonly by importing this package",
   "repository": {
