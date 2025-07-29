@@ -1,7 +1,7 @@
 {
   "name": "mark-testonly",
   "version": "0.1.1",
-  "description": "mark .js/.ts files as testonly by importing this package",
+  "description": "mark files as testonly by importing this package",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/drdxk/testonly.git"
