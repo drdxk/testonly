@@ -1,10 +1,10 @@
 {
   "name": "mark-testonly",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "mark .js/.ts files as testonly by importing this package",
   "repository": {
     "type": "git",
-    "url": "git+"
+    "url": "git+https://github.com/drdxk/testonly.git"
   },
   "license": "ISC",
   "author": "Dmytro Kossa",
