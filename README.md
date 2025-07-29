@@ -1,4 +1,4 @@
-# testonly
+# mark-testonly
 
 Importing this file when `NODE_ENV !== 'test'` throws an error.
 
