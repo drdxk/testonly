@@ -7,17 +7,17 @@
  *
  * @example
  * ```ts
- * import '@drdxk/testonly';
+ * import 'mark-testonly';
  * ```
  *
  * @example
  * ```ts
- * require('@drdxk/testonly');
+ * require('mark-testonly');
  * ```
  */
 
 if (process.env.NODE_ENV !== 'test') {
-  throw new Error('@drdxk/testonly import in non-test environment.');
+  throw new Error('mark-testonly import in non-test environment.');
 }
 
 export {};

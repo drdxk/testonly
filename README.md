@@ -11,10 +11,10 @@ Recommendation: make it the first import in your files.
 
 ```typescript
 // my-test-util.ts
-import '@drdxk/testonly';
+import 'mark-testonly';
 ```
 
 ```javascript
 // my-legacy-test-util.cjs
-require('@drdxk/testonly');
+require('mark-testonly');
 ```
