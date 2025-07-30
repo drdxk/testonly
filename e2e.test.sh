@@ -14,6 +14,14 @@ else
   exit 1
 fi
 
+NODE_ENV=prod /usr/bin/env node ./dist/esm/index.mjs > /dev/null 2>&1
+if [ $? -eq 1 ]; then
+  echo "${PADDING}✔️ (esm) exit code 1 when env is prod"
+else
+  echo "${PADDING}❌ (esm) exit code not 1 when env is prod"
+  exit 1
+fi
+
 NODE_ENV=test /usr/bin/env node ./dist/esm/index.mjs > /dev/null 2>&1
 if [ $? -eq 0 ]; then
   echo "${PADDING}✔️ (esm) exit code 0 when env is test"
@@ -30,6 +38,14 @@ if [ $? -eq 1 ]; then
   echo "${PADDING}✔️ (cjs) exit code 1 when env is not specified"
 else
   echo "${PADDING}❌ (cjs) exit code not 1 when env is not specified"
+  exit 1
+fi
+
+NODE_ENV=prod /usr/bin/env node ./dist/cjs/index.cjs > /dev/null 2>&1
+if [ $? -eq 1 ]; then
+  echo "${PADDING}✔️ (cjs) exit code 1 when env is prod"
+else
+  echo "${PADDING}❌ (cjs) exit code not 1 when env is prod"
   exit 1
 fi
 
