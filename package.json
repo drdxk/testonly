@@ -1,6 +1,6 @@
 {
   "name": "mark-testonly",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "mark files as testonly by importing this package",
   "repository": {
     "type": "git",
@@ -9,19 +9,20 @@
   "license": "ISC",
   "author": "Dmytro Kossa",
   "type": "module",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "main": "dist/cjs/index.cjs",
+  "module": "dist/esm/index.mjs",
   "types": "dist/types/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/types/index.d.ts",
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js"
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/cjs/index.cjs"
+    },
+    "./fn": {
+      "import": "./dist/esm/fn.mjs",
+      "require": "./dist/cjs/fn.cjs"
     }
   },
   "files": [
-    "index.mjs",
-    "index.cjs.js",
     "dist/**/*",
     "README.md",
     "CHANGELOG.md"
@@ -34,13 +35,11 @@
     "test": "vitest",
     "test:run": "vitest run",
     "test:watch": "vitest watch",
-    "test:coverage": "vitest run --coverage",
     "typecheck": "tsc --noEmit",
     "lint": "eslint && prettier --check src",
     "format": "prettier --write src && eslint --fix",
-    "build": "npm run build:vite && ./legacy_hints.sh && npm run e2e",
+    "build": "npm run build:vite && npm run e2e",
     "build:vite": "rm -rf dist && vite build",
-    "build:tsc": "rm -rf dist && tsc -p tsconfig.build.types.json && tsc -p tsconfig.build.esm.json && tsc-alias -p tsconfig.build.esm.json && tsc -p tsconfig.build.cjs.json && tsc-alias -p tsconfig.build.cjs.json && find dist/cjs -name '*.js' -exec mv {} {}.cjs \\;",
     "check": "npm run typecheck && npm run lint && npm run test:run"
   },
   "devDependencies": {

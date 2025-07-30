@@ -23,19 +23,22 @@ export default defineConfig({
   build: {
     emptyOutDir: false,
     lib: {
-      entry: path.resolve(__dirname, 'src/index.ts'),
+      entry: {
+        index: path.resolve(__dirname, 'src/index.ts'),
+        fn: path.resolve(__dirname, 'src/fn.ts'),
+      },
     },
     rollupOptions: {
       output: [
         {
           format: 'cjs',
           dir: 'dist/cjs',
-          entryFileNames: 'index.js',
+          entryFileNames: '[name].cjs',
         },
         {
           format: 'es',
           dir: 'dist/esm',
-          entryFileNames: 'index.js',
+          entryFileNames: '[name].mjs',
         },
       ],
     },

@@ -6,7 +6,7 @@ PADDING="  "
 
 echo "${PADDING}▶️  Testing ESM..."
 PADDING="    "
-/usr/bin/env node ./dist/esm/index.js > /dev/null 2>&1
+/usr/bin/env node ./dist/esm/index.mjs > /dev/null 2>&1
 if [ $? -eq 1 ]; then
   echo "${PADDING}✔️ (esm) exit code 1 when env is not specified"
 else
@@ -14,7 +14,7 @@ else
   exit 1
 fi
 
-NODE_ENV=test /usr/bin/env node ./dist/esm/index.js > /dev/null 2>&1
+NODE_ENV=test /usr/bin/env node ./dist/esm/index.mjs > /dev/null 2>&1
 if [ $? -eq 0 ]; then
   echo "${PADDING}✔️ (esm) exit code 0 when env is test"
 else
@@ -25,7 +25,7 @@ fi
 PADDING="  "
 echo "${PADDING}▶️  Testing CJS..."
 PADDING="    "
-/usr/bin/env node ./dist/cjs/index.js > /dev/null 2>&1
+/usr/bin/env node ./dist/cjs/index.cjs > /dev/null 2>&1
 if [ $? -eq 1 ]; then
   echo "${PADDING}✔️ (cjs) exit code 1 when env is not specified"
 else
@@ -33,7 +33,7 @@ else
   exit 1
 fi
 
-NODE_ENV=test /usr/bin/env node ./dist/cjs/index.js > /dev/null 2>&1
+NODE_ENV=test /usr/bin/env node ./dist/cjs/index.cjs > /dev/null 2>&1
 if [ $? -eq 0 ]; then
   echo "${PADDING}✔️ (cjs) exit code 0 when env is test"
 else
